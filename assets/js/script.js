@@ -83,3 +83,7 @@ $(document).ready(function() {
     })
     // end: Charts
 })
+// function dropdown(){
+//     var mylist = document.getElementById("myList");
+//     document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
+// }

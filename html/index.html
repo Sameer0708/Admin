@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.1/dist/boxicons.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <!-- start: Icons -->
+    <!-- start: Icons -->
     <!-- start: CSS -->
     <link rel="icon" href="../assets/Images/Mhsscoe_3.png" type="image/icon type">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
             <li class="sidebar-menu-item active">
                 <a href="#">
                     <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
-                   Examcell Dashboard
+                    Examcell Dashboard
                 </a>
             </li>
             <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Work</li>
@@ -38,7 +38,7 @@
                 <a href="#">
                     <!-- <i class="ri-user-line sidebar-menu-item-icon"></i> -->
                     <i class="fa-solid fa-user sidebar-menu-item-icon" style="font-size: 23px;"></i>
-                     Profile
+                    Profile
                 </a>
             </li>
             <!-- <li class="sidebar-menu-item">
@@ -65,7 +65,7 @@
                     Profile
                     <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
                 </a> -->
-                <!-- <ul class="sidebar-dropdown-menu">
+            <!-- <ul class="sidebar-dropdown-menu">
                     <li class="sidebar-dropdown-menu-item">
                         <a href="#">
                             User Profile
@@ -166,7 +166,7 @@
                             Verify Re-Exam(KT) Forms
                         </a>
                     </li>
-                    </ul>
+                </ul>
             </li>
 
             <li class="sidebar-menu-item has-dropdown">
@@ -274,28 +274,31 @@
                 <h5 class="fw-bold mb-0 me-auto">Examcell Dashboard</h5>
                 <section>
                     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
-                      <button class="navbar-toggler" aria-labelledby="dropdownMenuButton1"  data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                          <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" href="#"><strong>Update Profile</strong></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" href="#"><strong>Change Password</strong></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" href="#"><strong>Logout</strong></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </nav>
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" aria-labelledby="dropdownMenuButton1"
+                                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="#"><strong>Home</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#"><strong>Update Profile</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#"><strong>Change Password</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#"><strong>Logout</strong></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
                 </section>
                 <div class="dropdown me-3 d-none d-sm-block">
                     <div class="cursor-pointer dropdown-toggle navbar-link" data-bs-toggle="dropdown"
@@ -366,137 +369,150 @@
             <!-- end: Navbar -->
 
             <!-- start: Content -->
-            <div class="py-4">
                 <div class="dropdown">
-                    <h3>Enter details for students to fill D-form and Exam-form:</h3>
-                    <a class="btn btn-secondary dropdown-toggle" href="#drop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Select Branch <img src="../assets/Images/dropdown.jpg" width="20px" alt="">
-                    </a>
-                  
-                    <ul class="dropdown-menu" href="drop">
-                      <li><a class="dropdown-item" href="#ce">Computer Engineering</a></li>
-                      <li><a class="dropdown-item" href="#it">Information technology</a></li>
-                      <li><a class="dropdown-item" href="#me">Mechanical Engineering</a></li>
-                      <li><a class="dropdown-item" href="#extc">EXTC</a></li>
-                      <li><a class="dropdown-item" href="#civil">Civil Engineering</a></li>
-                      <li><a class="dropdown-item" href="#aiml">AIML</a></li>
-                      <li><a class="dropdown-item" href="#iot">IoT</a></li>
-                    </ul>
-                <input type="text" id="#drop" readonly value="">
-                  </div><br>
+                    <h3 class="py-3">Enter details for students to fill D-form and Exam-form:</h3>
+                    <form>
+                        <b> Select Branch of Student : </b>
+                        <select id="myList1" onchange="favTutorial1()">
+                            <option> -----Branch Name---- </option>
+                            <option> Computer Engineering </option>
+                            <option> Information technology </option>
+                            <option> Mechanical Engineering </option>
+                            <option> EXTC </option>
+                            <option> Civil Engineering</option>
+                            <option>AIML</option>
+                            <option>IoT</option>
+                        </select>
+                        <p> Your selected Branch is:
+                            <input type="text" id="favourite1" readonly size="20">
+                        </p>
+                    </form>
+                    <script> function favTutorial1() {
+                            var mylist = document.getElementById("myList1");
+                            document.getElementById("favourite1").value = mylist.options[mylist.selectedIndex].text;
+                        }</script>
 
-                  <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#drop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Select Year <img src="../assets/Images/dropdown.jpg" width="20px" alt="">
-                    </a>
-                  
-                    <ul class="dropdown-menu" href="drop">
-                      <li><a class="dropdown-item" href="#1">1st Year</a></li>
-                      <li><a class="dropdown-item" href="#2">2nd Year</a></li>
-                      <li><a class="dropdown-item" href="#3">3rd Year</a></li>
-                      <li><a class="dropdown-item" href="#4">4th Year</a></li>
-                    </ul>
-                <input type="text" id="#drop" readonly value="">
-                  </div><br>
-                 
-                  <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#drop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Select Sem <img src="../assets/Images/dropdown.jpg" width="20px" alt="">
-                    </a>
-                  
-                    <ul class="dropdown-menu" href="drop">
-                      <li><a class="dropdown-item" href="#1sem">1st Sem</a></li>
-                      <li><a class="dropdown-item" href="#2sem">2nd Sem</a></li>
-                      <li><a class="dropdown-item" href="#3sem">3rd Sem</a></li>
-                      <li><a class="dropdown-item" href="#4sem">4th Sem</a></li>
-                      <li><a class="dropdown-item" href="#5sem">5th Sem</a></li>
-                      <li><a class="dropdown-item" href="#6sem">6th Sem</a></li>
-                      <li><a class="dropdown-item" href="#7sem">7th Sem</a></li>
-                      <li><a class="dropdown-item" href="#8sem">8th Sem</a></li>
-                    </ul>
-                <input type="text" id="#drop" readonly value="">
-                  </div><br>
-                  
-                Enter Last date to Fill Form: <input type="date" placeholder="Enter Date"><br>
+                    <form>
+                        <b> Select Year of Student : </b>
+                        <select id="myList2" onchange="favTutorial2()">
+                            <option> ---Choose year--- </option>
+                            <option> 1st Year </option>
+                            <option> 2nd Year </option>
+                            <option> 3rd Year </option>
+                            <option> 4th Year </option>
+                        </select>
+                        <p> Your selected Year is:
+                            <input type="text" id="favourite2" readonly size="20">
+                        </p>
+                    </form>
+                    <script> function favTutorial2() {
+                            var mylist = document.getElementById("myList2");
+                            document.getElementById("favourite2").value = mylist.options[mylist.selectedIndex].text;
+                        }</script>
 
-                <button type="button" class="btn btn-success my-3">Start Form Filling Process</button>
-                <!-- start: Summary -->
-                <div class="row g-3">
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <a href="#"
-                            class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-primary">
-                            <div>
-                                <i class="fa-solid fa-paperclip summary-icon bg-primary mb-2"></i>
-                                <div>Students Verification in queue</div>
-                            </div>
-                            <h4>12 Students</h4>
-                        </a>
+                    <form>
+                        <b> Select Sem of Student : </b>
+                        <select id="myList3" onchange="favTutorial3()">
+                            <option> ---Choose Semester--- </option>
+                            <option> 1st Sem </option>
+                            <option> 2nd Sem </option>
+                            <option> 3rd Sem </option>
+                            <option> 4th Sem </option>
+                            <option> 5th Sem </option>
+                            <option> 6th Sem </option>
+                            <option> 7th Sem </option>
+                            <option> 8th Sem </option>
+                        </select>
+                        <p> Your selected Sem is:
+                            <input type="text" id="favourite3" readonly size="20">
+                        </p>
+                    </form>
+                    <script> function favTutorial3() {
+                            var mylist = document.getElementById("myList3");
+                            document.getElementById("favourite3").value = mylist.options[mylist.selectedIndex].text;
+                        }</script>
+                    Enter Last date to Fill Form: <input type="date" placeholder="Enter Date"><br>
+
+                    <button type="button" class="btn btn-success my-3">Start Form Filling Process</button>
+                    <!-- start: Summary -->
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <a href="#"
+                                class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-primary">
+                                <div>
+                                    <i class="fa-solid fa-paperclip summary-icon bg-primary mb-2"></i>
+                                    <div>Students Verification in queue</div>
+                                </div>
+                                <h4>12 Students</h4>
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <a href="#"
+                                class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-indigo">
+                                <div>
+                                    <i class="fa-solid fa-shuffle summary-icon bg-indigo mb-2"></i>
+                                    <div>Students re-entered details who has errors in form</div>
+                                </div>
+                                <h4>125 Students</h4>
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <a href="#"
+                                class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-success">
+                                <div>
+                                    <i class="fa-solid fa-check summary-icon bg-success mb-2"></i>
+                                    <div>Student's Form Verified successfully</div>
+                                </div>
+                                <h4>365 Students</h4>
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <a href="#"
+                                class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-danger">
+                                <div>
+                                    <i class="fa-solid fa-xmark summary-icon bg-danger mb-2"></i>
+                                    <div>Students having errors in form and sent for Verification</div>
+                                </div>
+                                <h4>65 Students</h4>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <a href="#"
-                            class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-indigo">
-                            <div>
-                                <i class="fa-solid fa-shuffle summary-icon bg-indigo mb-2"></i>
-                                <div>Students re-entered details who has errors in form</div>
+                    <!-- end: Summary -->
+                    <!-- start: Graph -->
+                    <div class="row g-3 mt-2">
+                        <div class="col-12 col-md-7 col-xl-8">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-header bg-white">
+                                    Form Filled
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="sales-chart"></canvas>
+                                </div>
                             </div>
-                            <h4>125 Students</h4>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <a href="#"
-                            class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-success">
-                            <div>
-                                <i class="fa-solid fa-check summary-icon bg-success mb-2"></i>
-                                <div>Student's Form Verified successfully</div>
-                            </div>
-                            <h4>365 Students</h4>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <a href="#"
-                            class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-danger">
-                            <div>
-                                <i class="fa-solid fa-xmark summary-icon bg-danger mb-2"></i>
-                                <div>Students having errors in form and sent for Verification</div>
-                            </div>
-                            <h4>65 Students</h4>
-                        </a>
-                    </div>
-                </div>
-                <!-- end: Summary -->
-                <!-- start: Graph -->
-                <div class="row g-3 mt-2">
-                    <div class="col-12 col-md-7 col-xl-8">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-header bg-white">
-                                Form Filled
-                            </div>
-                            <div class="card-body">
-                                <canvas id="sales-chart"></canvas>
+                        </div>
+                        <div class="col-12 col-md-5 col-xl-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-header bg-white">
+                                    Visitors
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="visitors-chart"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 col-xl-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-header bg-white">
-                                Visitors
-                            </div>
-                            <div class="card-body">
-                                <canvas id="visitors-chart"></canvas>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- end: Graph -->
                 </div>
-                <!-- end: Graph -->
+                <!-- end: Content -->
             </div>
-            <!-- end: Content -->
-        </div>
     </main>
     <!-- end: Main -->
 
     <!-- start: JS -->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+        integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/script.js"></script>
     <!-- end: JS -->
