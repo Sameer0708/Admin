@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="fontawesome-free-5.2.0-web/css/all.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #f4f4f4;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        i {
+            color: #333;
+        }
+
+        .container {
+            width: 1170px;
+            margin: auto;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .photo {
+            width: 2cm;
+            height: 3cm;
+            color: #cac5c5;
+            background-color: white;
+            text-align: center;
+
+        }
+
+        .clg-result,
+        .graph {
+            width: 10cm;
+            height: 8cm;
+            color: #cac5c5;
+            background-color: white;
+            text-align: center;
+        }
+
+        .graph {
+            position: relative;
+            left: 12cm;
+            bottom: 8cm;
+        }
+
+        .right {
+            float: right;
+        }
+
+        ul {
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .current {
+            background: #2776a1;
+        }
+
+        .current a {
+            color: lightgrey;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #2776a1;
+            color: white;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        nav li {
+            float: left;
+            padding: 10px 20px;
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a:hover {
+            color: lightgrey;
+        }
+
+        .adminbrand {
+            color: lightgrey;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #333;
+            padding: 25px 0;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-weight: 200;
+            line-height: 1;
+            color: #777;
+        }
+
+        header span {
+            color: white;
+        }
+
+        header button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* BREADCRUMB */
+
+        .breadcrumb {
+            background: lightgrey;
+            margin: 15px 0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #777;
+        }
+
+        /* MAIN */
+
+        /* LEFT */
+
+        .row {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+            grid-gap: 30px;
+        }
+
+        .link {
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background: white;
+        }
+
+        .link a {
+            display: block;
+            padding: 12px;
+            border-bottom: 1px solid lightgrey;
+            text-decoration: none;
+            color: black;
+        }
+
+        .badge {
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background-color: #777;
+            border-radius: 10px;
+        }
+
+        .progress {
+            padding: 15px;
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+        }
+
+        .progress h4 {
+            text-transform: capitalize;
+        }
+
+        .progress-bar {
+            margin: 15px 0;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+        }
+
+        .fill-60 {
+            background: #333;
+            width: 60%;
+            color: white;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .fill-40 {
+            background: #333;
+            width: 40%;
+            color: white;
+            text-align: center;
+            padding: 2px;
+        }
+
+        /* RIGHT */
+
+        /* OVERVIEW */
+
+        .overview {
+            background: white;
+            border-radius: 10px;
+            border: 1px solid lightgrey;
+            margin-bottom: 20px;
+        }
+
+        .overview-top span {
+            padding: 12px;
+            display: block;
+            color: white;
+        }
+
+        .overview-bottom {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px;
+            padding: 20px 30px;
+            padding-bottom: 40px;
+        }
+
+        .card {
+            background: rgb(238, 236, 236);
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+        }
+
+        .card h3 {
+            font-size: 2em;
+            font-weight: 400;
+        }
+
+        /* LATEST */
+
+        .latest {
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            font-weight: 400;
+        }
+
+        .latest-top {
+            padding: 10px;
+            border: 1px solid lightgrey;
+            background: rgb(238, 236, 236);
+            margin-bottom: 10px;
+        }
+
+        .latest-bottom {
+            padding: 0 0 20px;
+            ;
+            background: white;
+        }
+
+        .latest-bottom table {
+            width: 95%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        .latest-bottom td,
+        th {
+            padding: 10px;
+        }
+
+        .latest-bottom table tr:nth-child(odd) {
+            background: rgb(238, 236, 236);
+        }
+
+        .latest-bottom table tr {
+            border-top: 1px solid lightgrey;
+        }
+
+        .latest-bottom table th {
+            text-align: left;
+        }
+
+        .latest-bottom table tr:hover {
+            background: lightgrey;
+        }
+
+        /* PAGES */
+
+        .filter {
+            padding: 10px 20px 20px;
+            background: white;
+        }
+
+        .filter input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+            width: 100%;
+        }
+
+        .pages-table td {
+            padding-bottom: 25px;
+        }
+
+        /* EDIT */
+
+        .latest-bottom-edit {
+            padding: 15px;
+        }
+
+        .latest-bottom-edit input,
+        .latest-bottom-edit textarea,
+        .latest-bottom-edit label,
+        .latest button {
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .latest-bottom-edit input[type="text"],
+        .latest-bottom-edit textarea {
+            width: 97%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+        }
+
+        .latest textarea {
+            padding: 30px;
+        }
+
+        hr {
+            border-color: #cac5c5
+        }
+
+        .latest button {
+            cursor: pointer;
+        }
+
+        /* LOGIN */
+
+        .login {
+            margin-left: 33.3%;
+            width: 33.3%;
+            padding: 20px;
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .login input,
+        .login label,
+        .login a {
+            padding: 5px;
+            margin: 10px;
+            width: 90%;
+        }
+
+        .login a {
+            text-align: center;
+        }
+
+        /* GLOBAL */
+
+        .red {
+            background: #2776a1;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .btn-red {
+            background: #2776a1;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .btn-white {
+            background: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid lightgrey;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .clg-view {
+            height: 8cm;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: white;
+            background: #333;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        /* MEDIA Q */
+
+        @media (max-width: 1170px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        @media (max-width: 998px) {
+            .container {
+                width: 750px;
+            }
+
+            .col-3,
+            .col-9 {
+                float: none;
+            }
+
+            .row {
+                display: block;
+            }
+
+            .col-3 {
+                margin-bottom: 30px;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .left,
+            .right {
+                floaT: none;
+            }
+
+            header button {
+                margin-top: 20px;
+            }
+        }
+    </style>
+    <title>Principle's Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="left">
+                <ul>
+
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Update Profile</a></li>
+                    <li><a href="">Change Password </a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <section class="breadcrumb">
+            <div>Dashboard</div>
+        </section>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="link">
+                        <div class="photo">
+                            Add photo
+                        </div>
+                        <a href="index.html" class="red" style="color: white;"><i class="fas fa-cog"
+                                style="color: white;"></i> Dashboard</a>
+                        <a href="pages.html"><i class="fas fa-file-alt"></i> Profile <span class="badge">13</span></a>
+                        <a href="posts.html"><i class="fas fa-pencil-alt"></i> Add HOD <span class="badge">33</span></a>
+                        <a href="users.html" style="border-bottom: none;"><i class="fas fa-user"></i> Student's List
+                            <span class="badge">303</span></a>
+                        <hr>
+                        <a href="pages.html"><i class="fas fa-file-alt"></i> Add Exam Cell <span
+                                class="badge">13</span></a>
+                    </div>
+
+                </div>
+                <div class="col-9">
+                    <div class="overview">
+                        <div class="overview-top red">
+                            <span>Website Overview </span>
+                        </div>
+                        <div class="overview-bottom">
+                            <div class="card">
+                                <h3><i class="fas fa-user"> </i> 303</h3>
+                                <p>Users</p>
+                            </div>
+                            <div class="card">
+                                <h3><i class="fas fa-file-alt"></i> 13</h3>
+                                <p>Pages</p>
+                            </div>
+                            <div class="card">
+                                <h3><i class="fas fa-pencil-alt"></i> 33</h3>
+                                <p>Posts</p>
+                            </div>
+                            <div class="card">
+                                <h3><i class="fas fa-chart-line"></i> 13,334</h3>
+                                <p>Visitors</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="clg-view">
+                        <div class="clg-result">
+                            Add Result
+                        </div>
+                        <div class="graph">
+                            Progress Graph
+                        </div>
+                    </section>
+
+                    <footer>
+                        <p>Copyright Principle's Dashboard, © 2018</p>
+                    </footer>
+</body>
+</html>
