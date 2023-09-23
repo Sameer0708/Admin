@@ -52,7 +52,7 @@ $(document).ready(function() {
         'November',
         'December',
     ];
-
+    //These barchar is for examcell dashboard
     const salesChart = new Chart($('#sales-chart'), {
         type: 'bar',
         data: {
@@ -71,6 +71,34 @@ $(document).ready(function() {
         }
     })
 
+    const labels1 = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+    ];
+
+    //This Chart is for Teacher dashboard
+    const salesChart1 = new Chart($('#sales-chart1'), {
+        type: 'bar',
+        data: {
+            labels: labels1,
+            datasets: [{
+                backgroundColor: '#6610f2',
+                data: [75, 50, 65, 42, 70, 0 ],
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    })
+    //This Piechart is for Examcell Dashboard
     const visitorsChart = new Chart($('#visitors-chart'), {
         type: 'doughnut',
         data: {
@@ -78,6 +106,17 @@ $(document).ready(function() {
             datasets: [{
                 backgroundColor: ['#6610f2', '#198754', '#ffc107'],
                 data: [80, 60, 30],
+            }]
+        }
+    })
+    //This Piechart is for Teacher Dashboard
+    const visitorsChart1 = new Chart($('#visitors-chart1'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Boys', 'Girls','Others'],
+            datasets: [{
+                backgroundColor: ['#6610f2', '#d63384', '#ffc107'],
+                data: [80, 60, 5],
             }]
         }
     })

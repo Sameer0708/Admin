@@ -319,8 +319,57 @@ nav {
 /* end: Suummary */
 /* end: Main */
 
+/* Table */
+.table-box
+{
+    margin: 20px auto;
+}
 
+.table-row{
+    display: table;
+    width: 100%;
+    margin: 10px auto;
+    font-family: sans-serif;
+    background: transparent;
+    padding: 12px 0;
+    color: #000;
+    font-size: 17px;
+    box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+}
+.table-head{
+    background: #6610f2;
+    box-shadow: none;
+    color: #fff;
+    font-weight: 600;
+}
+.table-head .table-cell{
+    border-right: none;
+}
+.table-cell{
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    padding: 4px 0;
+    border-right: 1px solid #000;
+    vertical-align: middle;
+}
+.first-cell{
+    text-align: left;
+    padding-left: 10px;
+}
+.last-cell{
+    border-right: none;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
 
+@media only screen and (max-width: 600px) {
+  .table-row {
+    font-size: 11px;
+  }
+}
 /* start: Breakpoints */
  /* X-Small devices (portrait phones, less than 576px) */
  /* No media query for `xs` since this is the default in Bootstrap */
